@@ -21,7 +21,7 @@ To run the tests use any of the two ways mentioned below.
 - Running using maven
     - Open the project in terminal and run below command
     ```$ mvn clean test``` 
-- Running testng.xml through IDE  
+- Execution through IDE  
     - Import the project to IntelliJIdea/any IDE, Build the project. Right click on the scenario and select run.
 
 ## Project Folder Structure
