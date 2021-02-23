@@ -26,6 +26,6 @@ To run the tests use any of the two ways mentioned below.
 
 ## Project Folder Structure
 
-![Alt text](Autotrader_Automation\folder structure.png)
+![Image](https://github.com/aarya2k/Autotrader_Automation/blob/main/folder%20structure.png)
     
     
