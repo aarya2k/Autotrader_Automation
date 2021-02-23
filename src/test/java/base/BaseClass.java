@@ -50,6 +50,8 @@ public class BaseClass {
 
     public void type(WebElement ele, String data) {
         try {
+            WebDriverWait wait = new WebDriverWait(driver, 120);
+            wait.until(ExpectedConditions.elementToBeClickable(ele));
             ele.clear();
             ele.sendKeys(data);
         } catch (InvalidElementStateException e) {
