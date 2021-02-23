@@ -4,8 +4,8 @@ Feature: Verify Search Functionality
 	Background: Navigate to homepage and verify elements
 		Given I navigate to "http://www.autotrader.com"
 		When I verify the links "Browse By Make", "Browse by Style", "Advance Search"
-		When I verify the buttons "Search"
-		When I verify the dropdowns "Any Make", "Any Model"
+		Then I verify the buttons "Search"
+		Then I verify the dropdowns "Any Make", "Any Model"
 
 	Scenario: Advance search and list the cars
 		Then I click on "Advance Search"

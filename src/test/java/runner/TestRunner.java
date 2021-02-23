@@ -6,10 +6,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/features"
+        features = "src/test/java/features"
         ,glue= {"src/test/java/steps/SearchSteps.java"}
 )
 
-public class CucumberITRunner {
+public class TestRunner {
 
 }

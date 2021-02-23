@@ -4,7 +4,6 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import pages.ResultPage;
 
-
 public class ResultSteps {
 
     private final ResultPage resultPage = new ResultPage();
@@ -16,11 +15,10 @@ public class ResultSteps {
     }
 
     @And("^verify I see only \"([^\"]*)\" cars and print number of cars listed$")
-    public void onlyMakeList() throws Throwable {
-
+    public void onlyMakeList(String brand) throws Throwable {
+        resultPage.verifyOnlyBrand(brand);
         resultPage.logTotalListings();
-
-
-
+        resultPage.closeActiveBrowser();
+        resultPage.closeAllBrowsers();
     }
 }
