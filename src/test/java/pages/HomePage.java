@@ -1,15 +1,16 @@
 package pages;
 
 import base.BaseClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class HomePage extends BaseClass {
 
     public boolean isLinksPresent(String make, String style, String search) {
-        WebElement isMake = locateElement("xpath", "//button[contains(text(), 'Browse By Make')]");
-        WebElement isStyle = locateElement("xpath", "//button[contains(text(), 'Browse by Style')]");
-        WebElement isAdvanceSearch = locateElement("xpath", "//a[@href='/cars-for-sale/advanced-search')]");
+        WebElement isMake = locateElement("xpath", "//div[@class='display-inline-block']//button[text()='Browse by Make']");
+        WebElement isStyle = locateElement("xpath", "//div[@class='display-inline-block']//button[text()='Browse by Style']");
+        WebElement isAdvanceSearch = locateElement("xpath", "//div[@class='display-inline-block']//a[text()='Advanced Search']");
 
         if((isMake != null) && (isStyle!= null) && (isAdvanceSearch != null )){
             System.out.println("Element is Present");
@@ -21,7 +22,12 @@ public class HomePage extends BaseClass {
     }
 
     public boolean isButtonPresent(String search) {
-        WebElement isButton = locateElement("id", search);
+        WebElement isButton = locateElement("xpath", "//button[@id=\"search\"]");
+//        Select select = new Select(driver.findElement(By.xpath("//select")));
+//        WebElement option = select.getFirstSelectedOption();
+//        String defaultItem = option.getText();
+//
+//        String selectedOption = new Select(driver.findElement(By.xpath("//div[@class='form-group']//select"))).getFirstSelectedOption().getText();
 
         if((isButton != null)){
             System.out.println("Element is Present");
@@ -33,8 +39,8 @@ public class HomePage extends BaseClass {
     }
 
     public boolean isDropdownPresent(String makeCode, String modelCode) {
-        WebElement isMakeCode = locateElement("xpath", "//*[text() = makeCode]");
-        WebElement isModelCode = locateElement("xpath", "//*[text() = modelCode]");
+        WebElement isMakeCode = locateElement("xpath", "(//div[@class='form-group']//select)[1]");
+        WebElement isModelCode = locateElement("xpath", "(//div[@class='form-group']//select)[2]");
 
         if((isMakeCode != null) && (isModelCode!= null)){
             System.out.println("Element is Present");
@@ -46,11 +52,11 @@ public class HomePage extends BaseClass {
     }
 
     public void advanceClick(String advSearch){
-        click(locateElement("link", advSearch));
+        click(locateElement("xpath", "//button[@id='search']"));
     }
 
     public void enterZip(String value, String ele){
-        type(locateElement("xpath", "//span[text() = ele]"), value);
+        type(locateElement("xpath", "//input[@id='zip48577207']"), value);
     }
 
     public void clickCheck(String ele){

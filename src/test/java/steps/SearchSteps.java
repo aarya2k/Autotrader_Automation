@@ -15,7 +15,7 @@ public class SearchSteps {
 
     @Given("^I navigate to \"([^\"]*)\"$")
     public void goto_url(String url) throws Throwable {
-        homePage.launchBrowser();
+        homePage.launchBrowser(url);
     }
 
     @When("^I verify the links \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$")

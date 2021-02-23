@@ -13,15 +13,18 @@ public class BaseClass {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    public void launchBrowser() {
-        System.setProperty("web driver.chrome.driver", "./chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("-incognito");
-        options.addArguments("disable-infobars");
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        driver = new ChromeDriver(capabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public void launchBrowser(String url) {
+        System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("-incognito");
+//        options.addArguments("disable-infobars");
+//        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//        WebDriver chromedriver=new ChromeDriver(capabilities);
+//        chromedriver.get(url);
+
+        driver = new ChromeDriver();
+        driver.get(url);
         driver.manage().window().maximize();
     }
 
