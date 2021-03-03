@@ -1,4 +1,4 @@
-Automation Framework to verify the advanced-search functionality in Auto Trader web application. The project is in Page Object Pattern Framework. It is written in Java, using selenium. Also used Cucumber as preferred tool for BDD approach
+Automation Framework to verify the advanced-search functionality in Auto Trader web application. The project is in Page Object Pattern Framework. It is written in Java and selenium. Also used Cucumber as preferred tool for BDD approach
 
 ## Getting Started
 
